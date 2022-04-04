@@ -1,0 +1,41 @@
+<div class="header">
+    <br>
+    <h1>Spreadsheet merge tool</h1>
+</div>
+<div class="page-container">
+    <div class="sidebar">
+        <br>
+        <br>
+        <a routerLink="/open-spreadsheet" routerLinkActive="selected" class="list-item">
+            <i class="material-icons">folder_open</i>
+            Open spreadsheet
+        </a>
+        <br>
+        <br>
+        <a routerLink="/set-merge-rules" routerLinkActive="selected" class="list-item">
+            <i class="material-icons">record_voice_over</i>
+            Set up merge rules
+        </a>
+        <br>
+        <br>
+        <a routerLink="/merge-tool"  routerLinkActive="selected" class="list-item">
+            <i class="material-icons">work</i>
+            Merge tool
+        </a>
+        <br>
+        <br>
+        <a routerLink="/admin" routerLinkActive="selected" class="list-item">
+            <i class="material-icons">account_box</i>
+            Admin
+        </a>
+        <br>
+        <br>
+        <a routerLink="/config" routerLinkActive="selected" class="list-item">
+            <i class="material-icons">build</i>
+           Configuration
+        </a>
+    </div>
+    <div class="page-content-container">
+        <router-outlet></router-outlet>
+    </div>
+</div>
