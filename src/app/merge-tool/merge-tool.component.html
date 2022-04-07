@@ -1,1 +1,19 @@
-<p>merge-tool works!</p>
+<h1 style="color:white">Enter the spreadsheets directory </h1>
+
+<input 
+type="text"
+#box_01 
+placeholder="Spreadsheets directory"
+name="spreadsheetsdirectory"
+/> 
+
+<h1 style="color:white"><br>Enter the output directory </h1>
+
+<input 
+type="text"
+#box_02 
+placeholder="Output directory"
+name="outputdirectory"
+/> 
+<p><br></p>
+<button (click)="getPathsAndMerge(box_01.value, box_02.value )">merge spreadsheets</button>

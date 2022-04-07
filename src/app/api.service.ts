@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  baseUrl = 'http://127.0.0.1:8000/api/fixes/';
-
-  private fspids = ['0000a', '0000b', '0000c', '0000d', '0000e', '0000f'];
+  //baseUrl = 'http://127.0.0.1:8000/api/fixes/';
+  baseUrl='http://127.0.0.1:8000/merge_two_spreadsheets/';
 
   constructor(
     private httpclient : HttpClient
@@ -16,6 +15,19 @@ export class ApiService {
 
   getFspids() {
     return this.httpclient.get<Array<any>>(this.baseUrl);
+  }
+
+  mergeSpreadsheets(spreadsheetsDir: string, outputDir: string){
+
+    
+    const httpParams = new HttpParams({
+      fromObject: {
+        merge_dir : 'C:\\Users\\RafaelMedeirosJacome\\Documents\\ibm_documents\\mentoria_jp\\test_spreadsheets\\',
+        output_file : 'C:\\Users\\RafaelMedeirosJacome\\Documents\\ibm_documents\\mentoria_jp\\test_spreadsheets\\merged.xlsx',
+      }
+    });
+
+    return (this.httpclient.get(this.baseUrl, {params : httpParams}).subscribe((data) => console.log(data)));
     
   }
   
